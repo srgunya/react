@@ -88,11 +88,13 @@ export default class App extends React.Component{
 	}
 		
 	sort(e){
+		
 		let a = e.target.parentNode.parentNode.parentNode.children;
 		let sex = a[0].children;
 		let color = a[1].children;
 		let brand = a[2].children;
 		let sexWords = [], colorWords = [], brandWords = [], sexItems = [], colorItems = [], brandItems = [], b = [], c = [], z = [], x = [];
+		
 		//получаем ключевые слова из списков
 		for(let i = 0; i < sex.length; i++){
 			if(sex[i].children[0].checked){
@@ -109,6 +111,7 @@ export default class App extends React.Component{
 				brandWords.push(brand[i].children[1].innerText)
 			}
 		}
+		console.log(sexWords)
 		//фильтруем по ключевым словам
 		sexItems = this.props.data.filter(function(item){
 				for (let i = 0; i < sexWords.length; i++){
